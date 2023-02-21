@@ -1,0 +1,859 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <title>905titches - Custom Embroidery</title>
+    <meta content="width=device-width, initial-scale=1.0" name="viewport">
+    <meta content="" name="keywords">
+    <meta content="" name="description">
+
+    <!-- Favicon -->
+    <link href="img/90titches_Logo.ico" rel="icon">
+
+    <!-- Google Web Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500&family=Oswald:wght@600&display=swap" rel="stylesheet">
+
+    <!-- Icon Font Stylesheet -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.10.0/css/all.min.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.4.1/font/bootstrap-icons.css" rel="stylesheet">
+
+    <!-- Libraries Stylesheet -->
+    <link href="lib/animate/animate.min.css" rel="stylesheet">
+    <link href="lib/owlcarousel/assets/owl.carousel.min.css" rel="stylesheet">
+
+    <!-- Customized Bootstrap Stylesheet -->
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Template Stylesheet -->
+    <link href="css/style.css" rel="stylesheet">
+
+    <style>.testing {
+   text-transform: uppercase;
+  background-image: linear-gradient(
+    -200deg,
+    #fa0000 0%,
+    #000000 29%,
+    #ff1313 67%,
+    #000000 100%
+  );
+  background-size: auto auto;
+  background-clip: border-box;
+  background-size: 200% auto;
+  color: rgb(241, 25, 25);
+  background-clip: text;
+  text-fill-color: transparent;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  animation: textclip 2s linear infinite;
+  display: inline-block;
+      font-size: 190px;
+}
+
+.glow {
+    color: rgb(241, 17, 17);
+  text-shadow:
+      0 0 7px rgb(241, 17, 17),
+      0 0 10px rgb(241, 17, 17),
+      0 0 21px rgb(241, 17, 17);
+}
+
+@keyframes textclip {
+  to {
+    background-position: 200% center;
+  }
+}
+
+.deconstructed {
+  position: relative;
+  margin: auto;
+  height: 0.71em;
+  color: transparent;
+  font-family: 'Cambay', sans-serif;
+  font-size: 5vw;
+  font-weight: 700;
+  letter-spacing: -0.02em;
+  line-height: 0.72em;
+}
+
+.deconstructed > div {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  color: #f82020;
+  pointer-events: none;
+}
+
+.deconstructed > div:nth-child(1) {
+  -webkit-mask-image: linear-gradient(black 25%, transparent 25%);
+  mask-image: linear-gradient(black 25%, transparent 25%);
+  animation: deconstructed1 5s infinite;
+}
+
+.deconstructed > div:nth-child(2) {
+  -webkit-mask-image: linear-gradient(transparent 25%, black 25%, black 50%, transparent 50%);
+  mask-image: linear-gradient(transparent 25%, black 25%, black 50%, transparent 50%);
+  animation: deconstructed2 5s infinite;
+}
+
+.deconstructed > div:nth-child(3) {
+   -webkit-mask-image: linear-gradient(transparent 50%, black 50%, black 75%, transparent 75%);
+  mask-image: linear-gradient(transparent 50%, black 50%, black 75%, transparent 75%);
+  animation: deconstructed3 5s infinite;
+}
+
+.deconstructed > div:nth-child(4) {
+   -webkit-mask-image: linear-gradient(transparent 75%, black 75%);
+  mask-image: linear-gradient(transparent 75%, black 75%);
+  animation: deconstructed4 5s infinite;
+}
+
+@keyframes deconstructed1 {
+  0% {
+    transform: translateX(100%);
+  }
+  26% {
+    transform: translateX(0%);
+  }
+  83% {
+    transform: translateX(-0.1%);
+  }
+  100% {
+    transform: translateX(-120%);
+  }
+}
+
+@keyframes deconstructed2 {
+  0% {
+    transform: translateX(100%);
+  }
+  24% {
+    transform: translateX(0.5%);
+  }
+  82% {
+    transform: translateX(-0.2%);
+  }
+  100% {
+    transform: translateX(-125%);
+  }
+}
+
+@keyframes deconstructed3 {
+  0% {
+    transform: translateX(100%);
+  }
+  22% {
+    transform: translateX(0%);
+  }
+  81% {
+    transform: translateX(0%);
+  }
+  100% {
+    transform: translateX(-130%);
+  }
+}
+
+@keyframes deconstructed4 {
+  0% {
+    transform: translateX(100%);
+  }
+  20% {
+    transform: translateX(0%);
+  }
+  80% {
+    transform: translateX(0%);
+  }
+  100% {
+    transform: translateX(-135%);
+  }
+}
+
+body {
+  color: rgb(242, 23, 23);
+  background: #111;
+  font-family: sans-serif;
+}
+
+
+
+a {
+  color: #ccc;
+}
+
+section {
+  padding: 20px;
+}
+
+.hero {
+  font-size: clamp(40px, 10vw, 70px);
+  line-height: 1;
+  display: inline-block;
+  color: rgb(238, 11, 11);
+  z-index: 2;
+  letter-spacing: 10px;
+
+ 
+  filter: drop-shadow(0 1px 3px);
+}
+
+
+
+.layers {
+  position: relative;
+}
+
+.layers::before,
+.layers::after {
+  content: attr(data-text);
+  position: absolute;
+  width: 110%;
+  z-index: -1;
+}
+
+.layers::before {
+  top: 10px;
+  left: 15px;
+  color: #f11924;
+}
+
+.layers::after {
+  top: 5px;
+  left: -10px;
+  color: #020000;
+}
+
+.single-path {
+  clip-path: polygon(
+    0% 12%,
+    53% 12%,
+    53% 26%,
+    25% 26%,
+    25% 86%,
+    31% 86%,
+    31% 0%,
+    53% 0%,
+    53% 84%,
+    92% 84%,
+    92% 82%,
+    70% 82%,
+    70% 29%,
+    78% 29%,
+    78% 65%,
+    69% 65%,
+    69% 66%,
+    77% 66%,
+    77% 45%,
+    85% 45%,
+    85% 26%,
+    97% 26%,
+    97% 28%,
+    84% 28%,
+    84% 34%,
+    54% 34%,
+    54% 89%,
+    30% 89%,
+    30% 58%,
+    83% 58%,
+    83% 5%,
+    68% 5%,
+    68% 36%,
+    62% 36%,
+    62% 1%,
+    12% 1%,
+    12% 34%,
+    60% 34%,
+    60% 57%,
+    98% 57%,
+    98% 83%,
+    1% 83%,
+    1% 53%,
+    91% 53%,
+    91% 84%,
+    8% 84%,
+    8% 83%,
+    4% 83%
+  );
+}
+
+.paths {
+  animation: paths 5s step-end infinite;
+}
+
+@keyframes paths {
+  0% {
+    clip-path: polygon(
+      0% 43%,
+      83% 43%,
+      83% 22%,
+      23% 22%,
+      23% 24%,
+      91% 24%,
+      91% 26%,
+      18% 26%,
+      18% 83%,
+      29% 83%,
+      29% 17%,
+      41% 17%,
+      41% 39%,
+      18% 39%,
+      18% 82%,
+      54% 82%,
+      54% 88%,
+      19% 88%,
+      19% 4%,
+      39% 4%,
+      39% 14%,
+      76% 14%,
+      76% 52%,
+      23% 52%,
+      23% 35%,
+      19% 35%,
+      19% 8%,
+      36% 8%,
+      36% 31%,
+      73% 31%,
+      73% 16%,
+      1% 16%,
+      1% 56%,
+      50% 56%,
+      50% 8%
+    );
+  }
+
+  5% {
+    clip-path: polygon(
+      0% 29%,
+      44% 29%,
+      44% 83%,
+      94% 83%,
+      94% 56%,
+      11% 56%,
+      11% 64%,
+      94% 64%,
+      94% 70%,
+      88% 70%,
+      88% 32%,
+      18% 32%,
+      18% 96%,
+      10% 96%,
+      10% 62%,
+      9% 62%,
+      9% 84%,
+      68% 84%,
+      68% 50%,
+      52% 50%,
+      52% 55%,
+      35% 55%,
+      35% 87%,
+      25% 87%,
+      25% 39%,
+      15% 39%,
+      15% 88%,
+      52% 88%
+    );
+  }
+
+  30% {
+    clip-path: polygon(
+      0% 53%,
+      93% 53%,
+      93% 62%,
+      68% 62%,
+      68% 37%,
+      97% 37%,
+      97% 89%,
+      13% 89%,
+      13% 45%,
+      51% 45%,
+      51% 88%,
+      17% 88%,
+      17% 54%,
+      81% 54%,
+      81% 75%,
+      79% 75%,
+      79% 76%,
+      38% 76%,
+      38% 28%,
+      61% 28%,
+      61% 12%,
+      55% 12%,
+      55% 62%,
+      68% 62%,
+      68% 51%,
+      0% 51%,
+      0% 92%,
+      63% 92%,
+      63% 4%,
+      65% 4%
+    );
+  }
+
+  45% {
+    clip-path: polygon(
+      0% 33%,
+      2% 33%,
+      2% 69%,
+      58% 69%,
+      58% 94%,
+      55% 94%,
+      55% 25%,
+      33% 25%,
+      33% 85%,
+      16% 85%,
+      16% 19%,
+      5% 19%,
+      5% 20%,
+      79% 20%,
+      79% 96%,
+      93% 96%,
+      93% 50%,
+      5% 50%,
+      5% 74%,
+      55% 74%,
+      55% 57%,
+      96% 57%,
+      96% 59%,
+      87% 59%,
+      87% 65%,
+      82% 65%,
+      82% 39%,
+      63% 39%,
+      63% 92%,
+      4% 92%,
+      4% 36%,
+      24% 36%,
+      24% 70%,
+      1% 70%,
+      1% 43%,
+      15% 43%,
+      15% 28%,
+      23% 28%,
+      23% 71%,
+      90% 71%,
+      90% 86%,
+      97% 86%,
+      97% 1%,
+      60% 1%,
+      60% 67%,
+      71% 67%,
+      71% 91%,
+      17% 91%,
+      17% 14%,
+      39% 14%,
+      39% 30%,
+      58% 30%,
+      58% 11%,
+      52% 11%,
+      52% 83%,
+      68% 83%
+    );
+  }
+
+  76% {
+    clip-path: polygon(
+      0% 26%,
+      15% 26%,
+      15% 73%,
+      72% 73%,
+      72% 70%,
+      77% 70%,
+      77% 75%,
+      8% 75%,
+      8% 42%,
+      4% 42%,
+      4% 61%,
+      17% 61%,
+      17% 12%,
+      26% 12%,
+      26% 63%,
+      73% 63%,
+      73% 43%,
+      90% 43%,
+      90% 67%,
+      50% 67%,
+      50% 41%,
+      42% 41%,
+      42% 46%,
+      50% 46%,
+      50% 84%,
+      96% 84%,
+      96% 78%,
+      49% 78%,
+      49% 25%,
+      63% 25%,
+      63% 14%
+    );
+  }
+
+  90% {
+    clip-path: polygon(
+      0% 41%,
+      13% 41%,
+      13% 6%,
+      87% 6%,
+      87% 93%,
+      10% 93%,
+      10% 13%,
+      89% 13%,
+      89% 6%,
+      3% 6%,
+      3% 8%,
+      16% 8%,
+      16% 79%,
+      0% 79%,
+      0% 99%,
+      92% 99%,
+      92% 90%,
+      5% 90%,
+      5% 60%,
+      0% 60%,
+      0% 48%,
+      89% 48%,
+      89% 13%,
+      80% 13%,
+      80% 43%,
+      95% 43%,
+      95% 19%,
+      80% 19%,
+      80% 85%,
+      38% 85%,
+      38% 62%
+    );
+  }
+
+  1%,
+  7%,
+  33%,
+  47%,
+  78%,
+  93% {
+    clip-path: none;
+  }
+}
+
+.movement {
+  /* Normally this position would be absolute & on the layers, set to relative here so we can see it on the div */
+  position: relative;
+  animation: movement 8s step-end infinite;
+}
+
+@keyframes movement {
+  0% {
+    top: 0px;
+    left: -20px;
+  }
+
+  15% {
+    top: 10px;
+    left: 10px;
+  }
+
+  60% {
+    top: 5px;
+    left: -10px;
+  }
+
+  75% {
+    top: -5px;
+    left: 20px;
+  }
+
+  100% {
+    top: 10px;
+    left: 5px;
+  }
+}
+
+.opacity {
+  animation: opacity 5s step-end infinite;
+}
+
+@keyframes opacity {
+  0% {
+    opacity: 0.1;
+  }
+
+  5% {
+    opacity: 0.7;
+  }
+
+  30% {
+    opacity: 0.4;
+  }
+
+  45% {
+    opacity: 0.6;
+  }
+
+  76% {
+    opacity: 0.4;
+  }
+
+  90% {
+    opacity: 0.8;
+  }
+
+  1%,
+  7%,
+  33%,
+  47%,
+  78%,
+  93% {
+    opacity: 0;
+  }
+}
+
+.font {
+  animation: font 7s step-end infinite;
+}
+
+@keyframes font {
+  0% {
+    font-weight: 100;
+    color: #090102;
+    filter: blur(3px);
+  }
+
+  20% {
+    font-weight: 500;
+    color: rgb(8, 0, 0);
+    filter: blur(0);
+  }
+
+  50% {
+    font-weight: 300;
+    color: #030000;
+    filter: blur(2px);
+  }
+
+  60% {
+    font-weight: 700;
+    color: rgb(6, 1, 1);
+    filter: blur(0);
+  }
+
+  90% {
+    font-weight: 500;
+    color: #080104;
+    filter: blur(6px);
+  }
+}
+
+.glitch span {
+  animation: paths 5s step-end infinite;
+}
+
+.glitch::before {
+  animation: paths 5s step-end infinite, opacity 5s step-end infinite,
+    font 8s step-end infinite, movement 10s step-end infinite;
+}
+
+.glitch::after {
+  animation: paths 5s step-end infinite, opacity 5s step-end infinite,
+    font 7s step-end infinite, movement 8s step-end infinite;
+}
+
+.hero-container {
+  position: relative;
+  padding: 10px 0;
+  text-align: center;
+}
+
+
+
+
+
+
+
+
+      </style>
+
+</head>
+
+<body>
+    <!-- Spinner Start -->
+    <div id="spinner" class="show bg-dark position-fixed translate-middle w-100 vh-100 top-50 start-50 d-flex align-items-center justify-content-center">
+        <div class="spinner-grow text-primary" style="width: 3rem; height: 3rem;" role="status">
+            <span class="sr-only">Loading...</span>
+        </div>
+    </div>
+    <!-- Spinner End -->
+
+
+    <nav class="navbar navbar-expand-lg bg-secondary navbar-dark sticky-top py-lg-0 px-lg-5 wow fadeIn" data-wow-delay="0.1s">
+        <a href="index.html" class="navbar-brand ms-4 ms-lg-0">
+            <h1 class="mb-0 text-primary text-uppercase"><i class=""></i>905titches</h1>
+        </a>
+        <button type="button" class="navbar-toggler me-4" data-bs-toggle="collapse" data-bs-target="#navbarCollapse">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarCollapse">
+            <div class="navbar-nav ms-auto p-4 p-lg-0">
+                <a href="index.html" class="nav-item nav-link">HOME</a>
+                <a href="about.html" class="nav-item nav-link">ABOUT</a>
+                <a href="service.html" class="nav-item nav-link active">ORDER NOW</a>
+                <div class="nav-item dropdown">
+                    <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown">GALLERY</a>
+                    <div class="dropdown-menu m-0">
+                        <a href="price.html" class="dropdown-item">CUSTOMS</a>
+                        <a href="team.html" class="dropdown-item">NIKE</a>
+                        <a href="open.html" class="dropdown-item">TORONTO</a>
+                        <a href="testimonial.html" class="dropdown-item">MOVIES/SHOWS</a>
+                        <a href="404.html" class="dropdown-item">OTHER</a>
+                    </div>
+                </div>
+                <a href="contact.html" class="nav-item nav-link">Contact</a>
+            </div>
+        </div>
+    </nav>
+
+    <div class="container-fluid page-header py-5 mb-5 wow fadeIn" data-wow-delay="0.1s">
+        <div class="container text-center py-5">
+            
+            <h1 class="display-3 text-white text-uppercase mb-3 animated slideInDown">ORDER NOW</h1>
+            <nav aria-label="breadcrumb animated slideInDown">
+                <ol class="breadcrumb justify-content-center text-uppercase mb-0">
+                    <li class="breadcrumb-item"><a class="text-white" href="#">Home</a></li>
+                    <li class="breadcrumb-item"><a class="text-white" href="#">Pages</a></li>
+                    <li class="breadcrumb-item text-primary active" aria-current="page">Order Now</li>
+                </ol>
+            </nav>
+        </div>
+    </div>
+
+
+  
+
+
+     <!-- Service Start -->
+     <div class="container-xxl py-5">
+        <div class="container">
+            <div class="text-center mx-auto mb-5 wow fadeInUp" data-wow-delay="0.1s" style="max-width: 600px;">
+                <p class="d-inline-block bg-secondary text-primary py-1 px-4">Embroidery Services</p>
+                <h1 class="text-uppercase">What We Provide</h1>
+            </div>
+            <div class="row g-4">
+                <div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.1s">
+                    <div class="service-item position-relative overflow-hidden bg-secondary d-flex h-100 p-5 ps-0">
+                        <div class="bg-dark d-flex flex-shrink-0 align-items-center justify-content-center" style="width: 60px; height: 60px;">
+                            <img class="img-fluid" src="img/hoodie.jpg" alt="">
+                        </div>
+                        <div class="ps-4">
+                            <h3 class="text-uppercase mb-3">Pre-made Crewneck/Hoodie!</h3>
+                            <p>Premade Designs found on our Gallery Page.</p>
+                            <span class="text-uppercase text-primary">From $35</span>
+                        </div>
+                       
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.3s">
+                    <div class="service-item position-relative overflow-hidden bg-secondary d-flex h-100 p-5 ps-0">
+                        <div class="bg-dark d-flex flex-shrink-0 align-items-center justify-content-center" style="width: 60px; height: 60px;">
+                            <img class="img-fluid" src="img/custom.jpg" alt="">
+                        </div>
+                        <div class="ps-4">
+                            <h3 class="text-uppercase mb-3">Customs!</h3>
+                            <p>Ranges depending on level of difficulty and number of colours!.</p>
+                            <span class="text-uppercase text-primary">From $50</span>
+                        </div>
+                       
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.5s">
+                    <div class="service-item position-relative overflow-hidden bg-secondary d-flex h-100 p-5 ps-0">
+                        <div class="bg-dark d-flex flex-shrink-0 align-items-center justify-content-center" style="width: 60px; height: 60px;">
+                            <img class="img-fluid" src="img/Robe.jpg" alt="">
+                        </div>
+                        <div class="ps-4">
+                            <h3 class="text-uppercase mb-3">Robe/Towels!</h3>
+                            <p>Bring your own Robe/Towel to be embroidered</p>
+                            <span class="text-uppercase text-primary">From $15</span>
+                        </div>
+                        
+                    </div>
+                </div>
+              
+               
+                
+            </div>
+        </div>
+    </div>
+    <!-- Service End -->
+
+
+
+
+   <!-- Footer Start -->
+   <div class="container-fluid bg-secondary text-light footer mt-5 pt-5 wow fadeIn" data-wow-delay="0.1s">
+    <div class="container py-5">
+        <div class="row g-5">
+            <div class="col-lg-4 col-md-6">
+                <h4 class="text-uppercase mb-4">Get In Touch</h4>
+                <div class="d-flex align-items-center mb-2">
+                    <div class="btn-square bg-dark flex-shrink-0 me-3">
+                        <span class="fa fa-map-marker-alt text-primary"></span>
+                    </div>
+                    <span>Scarborough, Toronto, Canada</span>
+                </div>
+                <div class="d-flex align-items-center mb-2">
+                    <div class="btn-square bg-dark flex-shrink-0 me-3">
+                        <span class="fab fa-instagram text-primary"></span>
+                    </div>
+                    <span>905titches</span>
+                </div>
+                <div class="d-flex align-items-center mb-2">
+                    <div class="btn-square bg-dark flex-shrink-0 me-3">
+                        <span class="fa fa-envelope-open text-primary"></span>
+                    </div>
+                    <span>905titches@gmail.com</span>
+                </div>
+                <div class="d-flex align-items-center">
+                    <div class="btn-square bg-dark flex-shrink-0 me-3">
+                        <span class="fab fa-linkedin-in text-primary"></span>
+                    </div>
+                    <span>linkedin.com/in/905titches/</span>
+                </div>
+            </div>
+            <div class="col-lg-4 col-md-6">
+                <h4 class="text-uppercase mb-4">Quick Links</h4>
+                <a class="btn btn-link" href="index.html">HOME</a>
+                <a class="btn btn-link" href="about.html">ABOUT</a>
+                <a class="btn btn-link" href="service.html">ORDER NOW</a>
+                <a class="btn btn-link" href="contact.html">CONTACT US</a>
+            </div>
+            <div class="col-lg-4 col-md-6">
+                <h4 class="text-uppercase mb-4">Socials</h4>
+               
+                <div class="d-flex pt-1 m-n1">
+                    <a class="btn btn-lg-square btn-dark text-primary m-1" href=""><i class="fa fa-envelope-open"></i></a>
+                    <a class="btn btn-lg-square btn-dark text-primary m-1" href=""><i class="fab fa-instagram"></i></a>
+                    <a class="btn btn-lg-square btn-dark text-primary m-1" href=""><i class="fab fa-linkedin-in"></i></a>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+</div>
+<!-- Footer End -->
+
+    <!-- Back to Top -->
+    <a href="#" class="btn btn-primary btn-lg-square back-to-top"><i class="bi bi-arrow-up"></i></a>
+
+
+    <!-- JavaScript Libraries -->
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="lib/wow/wow.min.js"></script>
+    <script src="lib/easing/easing.min.js"></script>
+    <script src="lib/waypoints/waypoints.min.js"></script>
+    <script src="lib/owlcarousel/owl.carousel.min.js"></script>
+
+    <!-- Template Javascript -->
+    <script src="js/main.js"></script>
+</body>
+
+</html>
