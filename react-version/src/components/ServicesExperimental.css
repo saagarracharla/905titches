@@ -1,0 +1,291 @@
+.services-experimental {
+  position: relative;
+  background: #0f0f0f;
+}
+
+.service-card-experimental {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  position: relative;
+  padding: 4rem;
+  overflow: hidden;
+}
+
+.service-card-experimental.left .service-content-wrapper {
+  flex-direction: row;
+}
+
+.service-card-experimental.right .service-content-wrapper {
+  flex-direction: row-reverse;
+}
+
+.service-content-wrapper {
+  width: 100%;
+  max-width: 1600px;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  gap: 4rem;
+  position: relative;
+}
+
+.service-number-large {
+  position: absolute;
+  font-family: 'Space Grotesk', sans-serif;
+  font-size: clamp(10rem, 25vw, 20rem);
+  font-weight: 900;
+  color: #ff1a1a;
+  opacity: 0.1;
+  line-height: 1;
+  z-index: 0;
+  pointer-events: none;
+  text-shadow: 0 0 100px rgba(255, 26, 26, 0.3);
+}
+
+.service-card-experimental.left .service-number-large {
+  left: -5%;
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+.service-card-experimental.right .service-number-large {
+  right: -5%;
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+.service-main-content {
+  flex: 1;
+  z-index: 10;
+  position: relative;
+  padding: 2rem;
+}
+
+.service-number-small {
+  font-family: 'Space Grotesk', sans-serif;
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: #ff1a1a;
+  margin-bottom: 1rem;
+  letter-spacing: 0.2em;
+}
+
+.service-title-experimental {
+  font-family: 'Space Grotesk', sans-serif;
+  font-size: clamp(4rem, 10vw, 8rem);
+  font-weight: 900;
+  line-height: 0.9;
+  letter-spacing: -0.05em;
+  margin-bottom: 1rem;
+  color: #ffffff;
+  transform-style: preserve-3d;
+  white-space: nowrap;
+  overflow: visible;
+  word-wrap: normal;
+}
+
+.service-char {
+  display: inline-block;
+  transition: all 0.3s ease;
+  cursor: default;
+}
+
+.service-subtitle {
+  font-size: 1.5rem;
+  font-weight: 600;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  margin-bottom: 2rem;
+  opacity: 0.8;
+}
+
+.service-description-experimental {
+  font-size: clamp(1rem, 1.5vw, 1.25rem);
+  color: #d0d0d0;
+  line-height: 1.8;
+  max-width: 500px;
+  margin-bottom: 3rem;
+}
+
+.service-link-experimental {
+  display: inline-flex;
+  align-items: center;
+  gap: 1rem;
+  padding: 1rem 2rem;
+  border: 2px solid;
+  background: transparent;
+  font-family: 'Space Grotesk', sans-serif;
+  font-size: 0.9rem;
+  font-weight: 700;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  text-decoration: none;
+  transition: all 0.3s ease;
+  position: relative;
+  overflow: hidden;
+}
+
+.service-link-experimental::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: currentColor;
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: transform 0.4s ease;
+  z-index: -1;
+}
+
+.service-link-experimental:hover::before {
+  transform: scaleX(1);
+}
+
+.service-link-experimental:hover {
+  color: #000000;
+}
+
+.service-visual-experimental {
+  flex: 1;
+  aspect-ratio: 1;
+  max-width: 600px;
+  position: relative;
+  z-index: 5;
+}
+
+.service-visual-bg {
+  width: 100%;
+  height: 100%;
+  border-radius: 30px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  overflow: hidden;
+}
+
+.service-visual-shape {
+  width: 80%;
+  height: 80%;
+  border: 3px solid;
+  border-radius: 50%;
+  position: relative;
+}
+
+.service-visual-shape::before,
+.service-visual-shape::after {
+  content: '';
+  position: absolute;
+  width: 50%;
+  height: 50%;
+  border: 2px solid;
+  border-radius: 50%;
+}
+
+.service-visual-shape::before {
+  top: -25%;
+  left: 25%;
+}
+
+.service-visual-shape::after {
+  bottom: -25%;
+  right: 25%;
+}
+
+/* Effect Overlays */
+.effect-overlay {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  z-index: 1;
+  opacity: 0.1;
+}
+
+.effect-thread {
+  background: repeating-linear-gradient(
+    45deg,
+    transparent,
+    transparent 10px,
+    rgba(255, 26, 26, 0.1) 10px,
+    rgba(255, 26, 26, 0.1) 20px
+  );
+  animation: threadMove 3s linear infinite;
+}
+
+.effect-laser {
+  background: linear-gradient(
+    90deg,
+    transparent,
+    rgba(0, 255, 255, 0.2) 50%,
+    transparent
+  );
+  animation: laserScan 2s linear infinite;
+  box-shadow: 0 0 100px rgba(0, 255, 255, 0.3);
+}
+
+.effect-heat {
+  background: radial-gradient(
+    circle,
+    rgba(255, 26, 26, 0.2) 0%,
+    transparent 70%
+  );
+  animation: heatPulse 4s ease-in-out infinite;
+}
+
+@keyframes threadMove {
+  0% { transform: translateX(-100%); }
+  100% { transform: translateX(100%); }
+}
+
+@keyframes laserScan {
+  0% { transform: translateX(-100%) skewX(-20deg); }
+  100% { transform: translateX(200%) skewX(-20deg); }
+}
+
+@keyframes heatPulse {
+  0%, 100% { opacity: 0.1; transform: scale(1); }
+  50% { opacity: 0.3; transform: scale(1.2); }
+}
+
+.service-thread .service-char:hover {
+  animation: stitchPulse 0.5s ease;
+}
+
+.service-laser .service-char:hover {
+  text-shadow: 0 0 20px currentColor;
+  filter: brightness(2);
+}
+
+.service-heat .service-char:hover {
+  animation: heatDistort 0.3s ease;
+}
+
+@keyframes stitchPulse {
+  0%, 100% { transform: scale(1); }
+  50% { transform: scale(1.1) translateY(-2px); }
+}
+
+@keyframes heatDistort {
+  0%, 100% { transform: scale(1) skew(0deg); }
+  25% { transform: scale(1.05) skew(2deg, -2deg); }
+  75% { transform: scale(1.05) skew(-2deg, 2deg); }
+}
+
+@media (max-width: 968px) {
+  .service-card-experimental {
+    padding: 2rem;
+  }
+  
+  .service-content-wrapper {
+    flex-direction: column !important;
+  }
+  
+  .service-number-large {
+    display: none;
+  }
+  
+  .service-main-content {
+    transform: rotate(0deg) !important;
+  }
+}
+

@@ -1,0 +1,126 @@
+.materials-experimental {
+  padding: 8rem 0;
+  background: #1a1a1a;
+  position: relative;
+  overflow: hidden;
+}
+
+.materials-container {
+  max-width: 1600px;
+  margin: 0 auto;
+  padding: 0 4rem;
+}
+
+.materials-header-experimental {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 2rem;
+  margin-bottom: 6rem;
+}
+
+.materials-label-line {
+  width: 100px;
+  height: 2px;
+  background: linear-gradient(90deg, transparent, #ff1a1a, transparent);
+  box-shadow: 0 0 20px #ff1a1a;
+}
+
+.materials-title-experimental {
+  font-family: 'Space Grotesk', sans-serif;
+  font-size: clamp(4rem, 10vw, 8rem);
+  font-weight: 900;
+  letter-spacing: -0.03em;
+  color: #ffffff;
+  text-align: center;
+}
+
+.materials-grid-experimental {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 3rem;
+  perspective: 1000px;
+}
+
+.material-card-experimental {
+  background: rgba(255, 255, 255, 0.03);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 20px;
+  padding: 3rem;
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+  cursor: pointer;
+  backdrop-filter: blur(10px);
+  transform-style: preserve-3d;
+  transition: all 0.3s ease;
+}
+
+.material-card-experimental:hover {
+  border-color: currentColor;
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.5);
+  background: rgba(255, 255, 255, 0.05);
+}
+
+.material-visual-experimental {
+  aspect-ratio: 1;
+  border-radius: 15px;
+  border: 2px solid;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  overflow: hidden;
+}
+
+.material-shape {
+  width: 60%;
+  height: 60%;
+  border: 3px solid;
+  border-radius: 50%;
+  position: relative;
+}
+
+.material-shape::before {
+  content: '';
+  position: absolute;
+  inset: -20%;
+  border: 2px solid;
+  border-radius: 50%;
+  opacity: 0.5;
+}
+
+.material-name-experimental {
+  font-family: 'Space Grotesk', sans-serif;
+  font-size: 2rem;
+  font-weight: 800;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+}
+
+.material-items {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+}
+
+.material-item {
+  font-size: 0.85rem;
+  color: #d0d0d0;
+  padding: 0.5rem 1rem;
+  background: rgba(255, 255, 255, 0.05);
+  border-radius: 20px;
+  transition: all 0.3s ease;
+  cursor: default;
+}
+
+@media (max-width: 968px) {
+  .materials-container {
+    padding: 0 2rem;
+  }
+  
+  .materials-grid-experimental {
+    grid-template-columns: 1fr;
+  }
+}
+

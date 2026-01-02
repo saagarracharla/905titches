@@ -1,0 +1,358 @@
+.hero-experimental {
+  min-height: 100vh;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  background: #0f0f0f;
+  perspective: 1000px;
+}
+
+.hero-3d-container {
+  width: 100%;
+  max-width: 1800px;
+  margin: 0 auto;
+  padding: 0 4rem;
+  position: relative;
+  z-index: 2;
+}
+
+/* Animated Background Shapes */
+.hero-shape {
+  position: absolute;
+  border-radius: 50%;
+  filter: blur(80px);
+  opacity: 0.3;
+  pointer-events: none;
+}
+
+.hero-shape-1 {
+  width: 600px;
+  height: 600px;
+  background: radial-gradient(circle, #ff1a1a, transparent);
+  top: -200px;
+  left: -200px;
+}
+
+.hero-shape-2 {
+  width: 500px;
+  height: 500px;
+  background: radial-gradient(circle, #00ffff, transparent);
+  bottom: -150px;
+  right: -150px;
+}
+
+.hero-shape-3 {
+  width: 400px;
+  height: 400px;
+  background: radial-gradient(circle, #ff1a1a, transparent);
+  top: 50%;
+  right: 10%;
+}
+
+.hero-content-3d {
+  position: relative;
+  transform-style: preserve-3d;
+  perspective: 1000px;
+}
+
+.hero-main {
+  text-align: center;
+  position: relative;
+  z-index: 10;
+}
+
+.hero-label-experimental {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 1.5rem;
+  margin-bottom: 3rem;
+}
+
+.label-line {
+  width: 60px;
+  height: 1px;
+  background: linear-gradient(90deg, transparent, #ff1a1a, transparent);
+  box-shadow: 0 0 10px #ff1a1a;
+}
+
+.label-text {
+  font-size: 0.75rem;
+  font-weight: 600;
+  letter-spacing: 0.3em;
+  color: #ff1a1a;
+  text-transform: uppercase;
+  white-space: nowrap;
+}
+
+.hero-title-container {
+  margin-bottom: 3rem;
+}
+
+.hero-title-word {
+  font-family: 'Space Grotesk', sans-serif;
+  font-size: clamp(5rem, 15vw, 12rem);
+  font-weight: 900;
+  line-height: 0.85;
+  letter-spacing: -0.05em;
+  display: block;
+  margin-bottom: 0.5rem;
+  white-space: nowrap;
+  overflow: visible;
+  transform-style: preserve-3d;
+}
+
+.hero-title-word.accent {
+  color: #ff1a1a;
+  text-shadow: 
+    0 0 40px rgba(255, 26, 26, 0.5),
+    0 0 80px rgba(255, 26, 26, 0.3);
+}
+
+.hero-title-word .char {
+  display: inline-block;
+  transition: all 0.3s ease;
+  cursor: default;
+}
+
+.hero-tagline-experimental {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 2rem;
+  margin-bottom: 4rem;
+  flex-wrap: wrap;
+  transform-style: preserve-3d;
+}
+
+.tagline-word {
+  font-family: 'Space Grotesk', sans-serif;
+  font-size: clamp(2rem, 5vw, 4rem);
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  color: #ffffff;
+  display: inline-block;
+  transform-style: preserve-3d;
+  cursor: default;
+  transition: all 0.3s ease;
+}
+
+.hero-cta-experimental {
+  display: flex;
+  justify-content: center;
+}
+
+.btn-experimental {
+  display: inline-flex;
+  align-items: center;
+  gap: 1.5rem;
+  padding: 1.5rem 3rem;
+  background: transparent;
+  border: 2px solid #ff1a1a;
+  color: #ff1a1a;
+  font-family: 'Space Grotesk', sans-serif;
+  font-size: 0.9rem;
+  font-weight: 700;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  text-decoration: none;
+  position: relative;
+  overflow: hidden;
+  transition: all 0.3s ease;
+}
+
+.btn-experimental::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: #ff1a1a;
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: transform 0.4s ease;
+  z-index: -1;
+}
+
+.btn-experimental:hover::before {
+  transform: scaleX(1);
+}
+
+.btn-experimental:hover {
+  color: #000000;
+  box-shadow: 0 0 60px rgba(255, 26, 26, 0.6);
+}
+
+.btn-arrow {
+  font-size: 1.5rem;
+  font-weight: 300;
+}
+
+/* Floating Service Numbers */
+.hero-services-float {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+}
+
+.float-service-number {
+  position: absolute;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.5rem;
+  cursor: pointer;
+  pointer-events: all;
+}
+
+.float-service-number:nth-child(1) {
+  top: 20%;
+  left: 10%;
+}
+
+.float-service-number:nth-child(2) {
+  top: 60%;
+  right: 15%;
+}
+
+.float-service-number:nth-child(3) {
+  bottom: 20%;
+  left: 20%;
+}
+
+.float-number {
+  font-family: 'Space Grotesk', sans-serif;
+  font-size: 4rem;
+  font-weight: 900;
+  color: #ff1a1a;
+  text-shadow: 0 0 30px rgba(255, 26, 26, 0.5);
+  line-height: 1;
+}
+
+.float-label {
+  font-size: 0.7rem;
+  font-weight: 600;
+  letter-spacing: 0.2em;
+  color: #ffffff;
+  text-transform: uppercase;
+  opacity: 0.7;
+}
+
+/* Scroll Indicator */
+.scroll-indicator-experimental {
+  position: absolute;
+  bottom: 4rem;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1rem;
+  z-index: 10;
+}
+
+.scroll-line-experimental {
+  width: 1px;
+  height: 60px;
+  background: linear-gradient(to bottom, #ff1a1a, transparent);
+  box-shadow: 0 0 10px #ff1a1a;
+}
+
+.scroll-indicator-experimental span {
+  font-size: 0.7rem;
+  letter-spacing: 0.3em;
+  color: #ffffff;
+  text-transform: uppercase;
+  opacity: 0.5;
+}
+
+/* Scanlines Effect */
+.scanlines-overlay {
+  position: absolute;
+  inset: 0;
+  background: repeating-linear-gradient(
+    0deg,
+    rgba(255, 26, 26, 0.03) 0px,
+    transparent 1px,
+    transparent 2px,
+    rgba(255, 26, 26, 0.03) 3px
+  );
+  pointer-events: none;
+  z-index: 5;
+  animation: scanlinesMove 8s linear infinite;
+  mix-blend-mode: overlay;
+}
+
+@keyframes scanlinesMove {
+  0% { transform: translateY(0); }
+  100% { transform: translateY(10px); }
+}
+
+/* Noise/Grain Overlay */
+.noise-overlay {
+  position: absolute;
+  inset: 0;
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 400 400' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)' opacity='0.05'/%3E%3C/svg%3E");
+  pointer-events: none;
+  z-index: 6;
+  opacity: 0.3;
+  mix-blend-mode: overlay;
+}
+
+/* Glitch Effect on Hover */
+.hero-title-word .char:hover {
+  animation: glitch 0.3s infinite;
+}
+
+@keyframes glitch {
+  0%, 100% {
+    transform: translate(0);
+    filter: hue-rotate(0deg);
+  }
+  20% {
+    transform: translate(-2px, 2px);
+    filter: hue-rotate(90deg);
+  }
+  40% {
+    transform: translate(-2px, -2px);
+    filter: hue-rotate(180deg);
+  }
+  60% {
+    transform: translate(2px, 2px);
+    filter: hue-rotate(270deg);
+  }
+  80% {
+    transform: translate(2px, -2px);
+    filter: hue-rotate(360deg);
+  }
+}
+
+@media (max-width: 968px) {
+  .hero-3d-container {
+    padding: 0 2rem;
+  }
+  
+  .hero-title-word {
+    font-size: clamp(3rem, 12vw, 8rem);
+  }
+  
+  .tagline-word {
+    font-size: clamp(1.5rem, 4vw, 2.5rem);
+  }
+  
+  .float-service-number {
+    display: none;
+  }
+}
+
+@media (max-width: 480px) {
+  .hero-title-word {
+    font-size: clamp(2.5rem, 10vw, 5rem);
+  }
+  
+  .label-text {
+    font-size: 0.6rem;
+    letter-spacing: 0.15em;
+  }
+}
+

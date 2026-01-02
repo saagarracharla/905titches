@@ -1,0 +1,73 @@
+.materials-section {
+  padding: 8rem 0;
+  background: var(--color-bg-secondary);
+}
+
+.materials-header {
+  text-align: center;
+  margin-bottom: 4rem;
+}
+
+.materials-label {
+  font-size: 0.75rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.2em;
+  color: var(--color-accent-red);
+  display: block;
+  margin-bottom: 1rem;
+}
+
+.materials-title {
+  font-family: var(--font-display);
+  font-size: clamp(3rem, 6vw, 5rem);
+  font-weight: 800;
+  letter-spacing: -0.02em;
+}
+
+.materials-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 2rem;
+}
+
+.material-card {
+  aspect-ratio: 1;
+  background: var(--color-surface);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 16px;
+  padding: 2rem;
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+  cursor: pointer;
+  backdrop-filter: blur(10px);
+  transition: all 0.3s ease;
+}
+
+.material-card:hover {
+  border-color: rgba(255, 26, 26, 0.4);
+  box-shadow: 0 30px 80px rgba(0, 0, 0, 0.5), 0 0 60px rgba(255, 26, 26, 0.3);
+  background: var(--color-surface-hover);
+}
+
+.material-visual {
+  width: 100%;
+  height: 60%;
+  background: linear-gradient(135deg, var(--color-bg-tertiary), var(--color-bg-secondary));
+  border-radius: 12px;
+}
+
+.material-name {
+  font-family: var(--font-display);
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: var(--color-text-primary);
+}
+
+.material-desc {
+  font-size: 0.9rem;
+  color: var(--color-text-secondary);
+  line-height: 1.6;
+}
+

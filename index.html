@@ -14,241 +14,317 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
     
+    <!-- GSAP for Advanced Animations -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollToPlugin.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/TextPlugin.min.js"></script>
+    
     <!-- Stylesheet -->
     <link rel="stylesheet" href="css/main.css">
+    <link rel="stylesheet" href="css/experimental.css">
+    <link rel="stylesheet" href="css/creative-enhancements.css">
+    <link rel="stylesheet" href="css/new-layout.css">
 </head>
 <body>
-    <!-- Navigation -->
-    <nav class="navbar" id="navbar">
-        <div class="nav-container">
-            <a href="index.html" class="nav-logo">
-                <span class="logo-text">905<span class="logo-accent">titches</span></span>
+    <!-- Particle Background -->
+    <div class="particle-bg" id="particleBg"></div>
+    
+    <!-- Navigation - Minimal, Floating -->
+    <nav class="navbar-new" id="navbar">
+        <div class="nav-container-new">
+            <a href="index.html" class="nav-logo-new">
+                <span class="logo-number">905</span>
+                <span class="logo-text-new">titches</span>
             </a>
-            <button class="nav-toggle" id="navToggle" aria-label="Toggle navigation">
+            <button class="nav-toggle-new" id="navToggle" aria-label="Toggle navigation">
                 <span></span>
                 <span></span>
                 <span></span>
             </button>
-            <ul class="nav-menu" id="navMenu">
-                <li><a href="index.html" class="nav-link active">Home</a></li>
-                <li><a href="services.html" class="nav-link">Services</a></li>
-                <li><a href="gallery.html" class="nav-link">Gallery</a></li>
-                <li><a href="about.html" class="nav-link">About</a></li>
-                <li><a href="contact.html" class="nav-link">Contact</a></li>
+            <ul class="nav-menu-new" id="navMenu">
+                <li><a href="index.html" class="nav-link-new active">Home</a></li>
+                <li><a href="services.html" class="nav-link-new">Services</a></li>
+                <li><a href="gallery.html" class="nav-link-new">Gallery</a></li>
+                <li><a href="about.html" class="nav-link-new">About</a></li>
+                <li><a href="contact.html" class="nav-link-new">Contact</a></li>
             </ul>
         </div>
     </nav>
 
-    <!-- Hero Section -->
-    <section class="hero" id="hero">
-        <div class="hero-background">
-            <div class="hero-grid"></div>
-            <div class="hero-glow"></div>
-        </div>
-        <div class="hero-content">
-            <div class="hero-text">
-                <h1 class="hero-title">
-                    <span class="title-line">Custom-Built.</span>
-                    <span class="title-line">Precision-Made.</span>
+    <!-- Hero - Asymmetric Split Layout -->
+    <section class="hero-new" id="hero">
+        <div class="hero-split">
+            <div class="hero-left">
+                <div class="hero-label">Custom Fabrication Studio</div>
+                <h1 class="hero-title-new">
+                    <span class="title-word" data-word="ENGINEERED">ENGINEERED</span>
+                    <span class="title-word title-accent-new" data-word="FABRICATION">FABRICATION</span>
                 </h1>
-                <p class="hero-subtitle">
-                    Where craftsmanship meets technology. Embroidery, laser engraving, and DTG printing 
-                    for the modern maker.
-                </p>
-                <div class="hero-cta">
-                    <a href="contact.html" class="btn btn-primary">
-                        <span>Start a Custom Order</span>
+                <div class="hero-tagline">
+                    <span>BUILT.</span>
+                    <span>NOT</span>
+                    <span>PRINTED.</span>
+                </div>
+                <div class="hero-cta-new">
+                    <a href="contact.html" class="btn-new btn-primary-new magnetic">
+                        <span>Start Order</span>
                         <svg width="20" height="20" viewBox="0 0 20 20" fill="none">
                             <path d="M7.5 15L12.5 10L7.5 5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
                         </svg>
                     </a>
-                    <a href="gallery.html" class="btn btn-secondary">
-                        <span>View Our Work</span>
-                    </a>
+                </div>
+            </div>
+            <div class="hero-right">
+                <div class="hero-visual">
+                    <div class="hero-number-large">01</div>
+                    <div class="hero-services-preview">
+                        <div class="service-preview-item">
+                            <span class="service-preview-number">01</span>
+                            <span class="service-preview-name">Embroidery</span>
+                        </div>
+                        <div class="service-preview-item">
+                            <span class="service-preview-number">02</span>
+                            <span class="service-preview-name">Laser</span>
+                        </div>
+                        <div class="service-preview-item">
+                            <span class="service-preview-number">03</span>
+                            <span class="service-preview-name">DTG</span>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
-        <div class="hero-scroll">
-            <div class="scroll-indicator">
-                <span>Scroll</span>
-                <div class="scroll-line"></div>
+        <div class="hero-scroll-new">
+            <div class="scroll-text">Scroll to explore</div>
+            <div class="scroll-line-new"></div>
+        </div>
+    </section>
+
+
+    <!-- Services - Full Width Vertical Cards -->
+    <section class="services-new" id="services">
+        <!-- Service 1: Embroidery -->
+        <div class="service-card-new" data-service="embroidery">
+            <div class="service-card-content">
+                <div class="service-number-new">01</div>
+                <div class="service-info">
+                    <h2 class="service-title-new">Embroidery</h2>
+                    <p class="service-description-new">
+                        Precision threadwork that transforms fabric into art. 
+                        Every stitch engineered for permanence. Custom designs on 
+                        hoodies, crewnecks, towels, and robes.
+                    </p>
+                    <a href="services.html#embroidery" class="service-link-new magnetic">
+                        <span>Explore Service</span>
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
+                            <path d="M7 17L17 7M17 7H7M17 7V17" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+                        </svg>
+                    </a>
+                </div>
+            </div>
+            <div class="service-visual-new">
+                <div class="service-visual-placeholder-new">
+                    <span>Embroidery</span>
+                </div>
+            </div>
+        </div>
+
+        <!-- Service 2: Laser -->
+        <div class="service-card-new service-card-reverse" data-service="laser">
+            <div class="service-card-content">
+                <div class="service-number-new">02</div>
+                <div class="service-info">
+                    <h2 class="service-title-new">Laser Engraving</h2>
+                    <p class="service-description-new">
+                        Molecular precision. Cutting and engraving with laser accuracy 
+                        across materials. Bottles, slate coasters, wood panels, and acrylic.
+                    </p>
+                    <a href="services.html#laser" class="service-link-new magnetic">
+                        <span>Explore Service</span>
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
+                            <path d="M7 17L17 7M17 7H7M17 7V17" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+                        </svg>
+                    </a>
+                </div>
+            </div>
+            <div class="service-visual-new">
+                <div class="service-visual-placeholder-new">
+                    <span>Laser</span>
+                </div>
+            </div>
+        </div>
+
+        <!-- Service 3: DTG -->
+        <div class="service-card-new" data-service="dtg">
+            <div class="service-card-content">
+                <div class="service-number-new">03</div>
+                <div class="service-info">
+                    <h2 class="service-title-new">DTG Printing</h2>
+                    <p class="service-description-new">
+                        Direct-to-garment technology. Full-color graphics with 
+                        industrial durability. Heat-pressed graphics for vibrant, 
+                        long-lasting designs.
+                    </p>
+                    <a href="services.html#dtg" class="service-link-new magnetic">
+                        <span>Explore Service</span>
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
+                            <path d="M7 17L17 7M17 7H7M17 7V17" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+                        </svg>
+                    </a>
+                </div>
+            </div>
+            <div class="service-visual-new">
+                <div class="service-visual-placeholder-new">
+                    <span>DTG</span>
+                </div>
             </div>
         </div>
     </section>
 
-    <!-- Services Preview -->
-    <section class="services-preview" id="servicesPreview">
-        <div class="container">
-            <div class="section-header">
-                <span class="section-label">What We Do</span>
-                <h2 class="section-title">Fabrication Services</h2>
+    <!-- Materials - Grid Layout -->
+    <section class="materials-new" id="materials">
+        <div class="materials-header">
+            <span class="materials-label">Materials</span>
+            <h2 class="materials-title-new">We Work With</h2>
+        </div>
+        <div class="materials-grid-new">
+            <div class="material-card-new" data-material="fabric">
+                <div class="material-visual-new"></div>
+                <h3 class="material-name-new">Fabric</h3>
+                <p class="material-desc-new">Hoodies • Crewnecks • Towels • Robes</p>
             </div>
-            <div class="services-grid">
-                <div class="service-card" data-service="embroidery">
-                    <div class="service-icon">
-                        <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
-                            <path d="M12 2L2 7L12 12L22 7L12 2Z" stroke-linecap="round" stroke-linejoin="round"/>
-                            <path d="M2 17L12 22L22 17" stroke-linecap="round" stroke-linejoin="round"/>
-                            <path d="M2 12L12 17L22 12" stroke-linecap="round" stroke-linejoin="round"/>
-                        </svg>
-                    </div>
-                    <h3 class="service-title">Embroidery</h3>
-                    <p class="service-description">
-                        Precision threadwork on hoodies, crewnecks, towels, and robes. 
-                        Custom designs with premium quality.
-                    </p>
-                    <a href="services.html#embroidery" class="service-link">
-                        Learn More
-                        <svg width="16" height="16" viewBox="0 0 16 16" fill="none">
-                            <path d="M6 12L10 8L6 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
-                        </svg>
-                    </a>
+            <div class="material-card-new" data-material="glass">
+                <div class="material-visual-new"></div>
+                <h3 class="material-name-new">Glass</h3>
+                <p class="material-desc-new">Bottles • Containers • Custom Shapes</p>
+            </div>
+            <div class="material-card-new" data-material="wood">
+                <div class="material-visual-new"></div>
+                <h3 class="material-name-new">Wood</h3>
+                <p class="material-desc-new">Panels • Coasters • Custom Cuts</p>
+            </div>
+            <div class="material-card-new" data-material="slate">
+                <div class="material-visual-new"></div>
+                <h3 class="material-name-new">Slate</h3>
+                <p class="material-desc-new">Coasters • Plaques • Engraved</p>
+            </div>
+            <div class="material-card-new" data-material="acrylic">
+                <div class="material-visual-new"></div>
+                <h3 class="material-name-new">Acrylic</h3>
+                <p class="material-desc-new">Signs • Displays • Precision Cuts</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Gallery Preview - Asymmetric Grid -->
+    <section class="gallery-preview-new" id="gallery">
+        <div class="gallery-header-new">
+            <span class="gallery-label">Featured Work</span>
+            <h2 class="gallery-title-new">Recent Creations</h2>
+            <a href="gallery.html" class="gallery-link-new magnetic">
+                <span>View Full Gallery</span>
+                <svg width="20" height="20" viewBox="0 0 20 20" fill="none">
+                    <path d="M7.5 15L12.5 10L7.5 5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                </svg>
+            </a>
+        </div>
+        <div class="gallery-grid-new">
+            <div class="gallery-item-new gallery-item-large">
+                <div class="gallery-placeholder-new">
+                    <span>Bottles</span>
                 </div>
-                
-                <div class="service-card" data-service="laser">
-                    <div class="service-icon">
-                        <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
-                            <path d="M12 2L2 7L12 12L22 7L12 2Z" stroke-linecap="round" stroke-linejoin="round"/>
-                            <path d="M2 17L12 22L22 17" stroke-linecap="round" stroke-linejoin="round"/>
-                            <path d="M2 12L12 17L22 12" stroke-linecap="round" stroke-linejoin="round"/>
-                        </svg>
-                    </div>
-                    <h3 class="service-title">Laser Engraving</h3>
-                    <p class="service-description">
-                        Precision cutting and engraving on bottles, slate coasters, wood, 
-                        and acrylic materials.
-                    </p>
-                    <a href="services.html#laser" class="service-link">
-                        Learn More
-                        <svg width="16" height="16" viewBox="0 0 16 16" fill="none">
-                            <path d="M6 12L10 8L6 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
-                        </svg>
-                    </a>
+                <div class="gallery-overlay-new">
+                    <span class="gallery-category">Laser Engraving</span>
                 </div>
-                
-                <div class="service-card" data-service="dtg">
-                    <div class="service-icon">
-                        <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
-                            <path d="M12 2L2 7L12 12L22 7L12 2Z" stroke-linecap="round" stroke-linejoin="round"/>
-                            <path d="M2 17L12 22L22 17" stroke-linecap="round" stroke-linejoin="round"/>
-                            <path d="M2 12L12 17L22 12" stroke-linecap="round" stroke-linejoin="round"/>
-                        </svg>
-                    </div>
-                    <h3 class="service-title">DTG / Heat Press</h3>
-                    <p class="service-description">
-                        Direct-to-garment printing and heat-pressed graphics. 
-                        Vibrant, durable designs on any fabric.
-                    </p>
-                    <a href="services.html#dtg" class="service-link">
-                        Learn More
-                        <svg width="16" height="16" viewBox="0 0 16 16" fill="none">
-                            <path d="M6 12L10 8L6 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
-                        </svg>
-                    </a>
+            </div>
+            <div class="gallery-item-new">
+                <div class="gallery-placeholder-new">
+                    <span>Hoodies</span>
+                </div>
+                <div class="gallery-overlay-new">
+                    <span class="gallery-category">Embroidery</span>
+                </div>
+            </div>
+            <div class="gallery-item-new">
+                <div class="gallery-placeholder-new">
+                    <span>Coasters</span>
+                </div>
+                <div class="gallery-overlay-new">
+                    <span class="gallery-category">Laser</span>
+                </div>
+            </div>
+            <div class="gallery-item-new gallery-item-tall">
+                <div class="gallery-placeholder-new">
+                    <span>Wood</span>
+                </div>
+                <div class="gallery-overlay-new">
+                    <span class="gallery-category">Cutting</span>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Featured Products -->
-    <section class="featured-products" id="featuredProducts">
-        <div class="container">
-            <div class="section-header">
-                <span class="section-label">Featured Work</span>
-                <h2 class="section-title">Recent Creations</h2>
-            </div>
-            <div class="products-grid">
-                <div class="product-card">
-                    <div class="product-image">
-                        <div class="product-placeholder">
-                            <span>Bottles</span>
-                        </div>
-                        <div class="product-overlay">
-                            <span class="product-category">Laser Engraving</span>
-                        </div>
-                    </div>
-                </div>
-                <div class="product-card">
-                    <div class="product-image">
-                        <div class="product-placeholder">
-                            <span>Hoodies</span>
-                        </div>
-                        <div class="product-overlay">
-                            <span class="product-category">Embroidery</span>
-                        </div>
-                    </div>
-                </div>
-                <div class="product-card">
-                    <div class="product-image">
-                        <div class="product-placeholder">
-                            <span>Coasters</span>
-                        </div>
-                        <div class="product-overlay">
-                            <span class="product-category">Laser Engraving</span>
-                        </div>
-                    </div>
-                </div>
-                <div class="product-card">
-                    <div class="product-image">
-                        <div class="product-placeholder">
-                            <span>Wood Panels</span>
-                        </div>
-                        <div class="product-overlay">
-                            <span class="product-category">Laser Cutting</span>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="section-cta">
-                <a href="gallery.html" class="btn btn-outline">
-                    <span>View Full Gallery</span>
-                    <svg width="20" height="20" viewBox="0 0 20 20" fill="none">
-                        <path d="M7.5 15L12.5 10L7.5 5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-                    </svg>
-                </a>
-            </div>
+    <!-- CTA Section -->
+    <section class="cta-new">
+        <div class="cta-content-new">
+            <h2 class="cta-title-new">Ready to Start Your Project?</h2>
+            <p class="cta-subtitle-new">Let's bring your vision to life with precision and craftsmanship.</p>
+            <a href="contact.html" class="btn-new btn-primary-new btn-large magnetic">
+                <span>Get Started</span>
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
+                    <path d="M7 17L17 7M17 7H7M17 7V17" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+                </svg>
+            </a>
         </div>
     </section>
 
-    <!-- Footer -->
-    <footer class="footer">
-        <div class="container">
-            <div class="footer-content">
-                <div class="footer-brand">
-                    <h3 class="footer-logo">905<span class="logo-accent">titches</span></h3>
-                    <p class="footer-tagline">Custom fabrication for the modern maker.</p>
+    <!-- Footer - Minimal -->
+    <footer class="footer-new">
+        <div class="footer-container-new">
+            <div class="footer-brand-new">
+                <h3 class="footer-logo-new">905<span class="logo-accent">titches</span></h3>
+                <p class="footer-tagline-new">Custom fabrication for the modern maker.</p>
+            </div>
+            <div class="footer-links-new">
+                <div class="footer-column-new">
+                    <h4 class="footer-title-new">Navigation</h4>
+                    <ul class="footer-list-new">
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="services.html">Services</a></li>
+                        <li><a href="gallery.html">Gallery</a></li>
+                        <li><a href="about.html">About</a></li>
+                        <li><a href="contact.html">Contact</a></li>
+                    </ul>
                 </div>
-                <div class="footer-links">
-                    <div class="footer-column">
-                        <h4 class="footer-title">Navigation</h4>
-                        <ul class="footer-list">
-                            <li><a href="index.html">Home</a></li>
-                            <li><a href="services.html">Services</a></li>
-                            <li><a href="gallery.html">Gallery</a></li>
-                            <li><a href="about.html">About</a></li>
-                            <li><a href="contact.html">Contact</a></li>
-                        </ul>
-                    </div>
-                    <div class="footer-column">
-                        <h4 class="footer-title">Connect</h4>
-                        <ul class="footer-list">
-                            <li><a href="https://www.instagram.com/905titches/" target="_blank" rel="noopener">Instagram</a></li>
-                            <li><a href="https://www.linkedin.com/company/905titches/" target="_blank" rel="noopener">LinkedIn</a></li>
-                            <li><a href="mailto:905titches@gmail.com">Email</a></li>
-                        </ul>
-                    </div>
-                    <div class="footer-column">
-                        <h4 class="footer-title">Location</h4>
-                        <p class="footer-text">Scarborough, Toronto, Canada</p>
-                    </div>
+                <div class="footer-column-new">
+                    <h4 class="footer-title-new">Connect</h4>
+                    <ul class="footer-list-new">
+                        <li><a href="https://www.instagram.com/905titches/" target="_blank" rel="noopener">Instagram</a></li>
+                        <li><a href="https://www.linkedin.com/company/905titches/" target="_blank" rel="noopener">LinkedIn</a></li>
+                        <li><a href="mailto:905titches@gmail.com">Email</a></li>
+                    </ul>
+                </div>
+                <div class="footer-column-new">
+                    <h4 class="footer-title-new">Location</h4>
+                    <p class="footer-text-new">Scarborough, Toronto, Canada</p>
                 </div>
             </div>
-            <div class="footer-bottom">
-                <p>&copy; 2024 905titches. All rights reserved.</p>
-            </div>
+        </div>
+        <div class="footer-bottom-new">
+            <p>&copy; 2024 905titches. All rights reserved.</p>
         </div>
     </footer>
 
+    <!-- Custom Cursor -->
+    <div class="custom-cursor" id="customCursor">
+        <div class="cursor-dot"></div>
+        <div class="cursor-outline"></div>
+    </div>
+
     <script src="js/main.js"></script>
+    <script src="js/experimental.js"></script>
+    <script src="js/creative-effects.js"></script>
+    <script src="js/new-layout.js"></script>
 </body>
 </html>

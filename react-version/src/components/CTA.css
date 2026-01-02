@@ -1,0 +1,31 @@
+.cta-section {
+  padding: 8rem 0;
+  background: var(--color-bg-secondary);
+  text-align: center;
+}
+
+.cta-content {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 0 4rem;
+}
+
+.cta-title {
+  font-family: var(--font-display);
+  font-size: clamp(3rem, 6vw, 5rem);
+  font-weight: 800;
+  letter-spacing: -0.02em;
+  margin-bottom: 1rem;
+}
+
+.cta-subtitle {
+  font-size: clamp(1rem, 1.5vw, 1.25rem);
+  color: var(--color-text-secondary);
+  margin-bottom: 3rem;
+}
+
+.btn-large {
+  padding: 1.5rem 3rem;
+  font-size: 1rem;
+}
+

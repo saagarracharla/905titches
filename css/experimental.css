@@ -1,0 +1,695 @@
+/* ============================================
+   EXPERIMENTAL CSS — Creative Director Mode
+   Bold, motion-driven, high-end design
+   ============================================ */
+
+/* ============================================
+   Custom Cursor
+   ============================================ */
+.custom-cursor {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 20px;
+    height: 20px;
+    pointer-events: none;
+    z-index: 9999;
+    mix-blend-mode: difference;
+    display: none;
+}
+
+.custom-cursor.active {
+    display: block;
+}
+
+.cursor-dot {
+    width: 8px;
+    height: 8px;
+    background: var(--color-accent-red);
+    border-radius: 50%;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    transition: transform 0.1s ease;
+}
+
+.cursor-outline {
+    width: 40px;
+    height: 40px;
+    border: 2px solid var(--color-accent-red);
+    border-radius: 50%;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    transition: width 0.3s ease, height 0.3s ease, opacity 0.3s ease;
+    opacity: 0.5;
+}
+
+.custom-cursor.hover .cursor-outline {
+    width: 60px;
+    height: 60px;
+    opacity: 0.8;
+}
+
+.custom-cursor.click .cursor-outline {
+    width: 30px;
+    height: 30px;
+}
+
+/* ============================================
+   Hero Enhancements
+   ============================================ */
+/* Scan lines removed - was causing red line issue */
+
+.hero-title .title-line {
+    display: block;
+    overflow: hidden;
+}
+
+.hero-title .title-line span {
+    display: inline-block;
+    transform: translateY(100%);
+}
+
+.title-accent {
+    color: var(--color-accent-red);
+    text-shadow: 0 0 30px var(--color-accent-red-glow);
+}
+
+.hero-subtitle {
+    overflow: hidden;
+}
+
+.subtitle-word {
+    display: inline-block;
+    margin-right: 0.5em;
+    transform: translateY(100%);
+}
+
+/* ============================================
+   Manifesto Section (Scrolling Text)
+   ============================================ */
+.manifesto-section {
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: var(--color-bg-secondary);
+    background-image: 
+        radial-gradient(circle at 50% 50%, rgba(255, 26, 26, 0.1) 0%, transparent 70%),
+        linear-gradient(180deg, transparent, var(--color-bg-primary));
+    position: relative;
+    overflow: hidden;
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.manifesto-container {
+    width: 100%;
+    max-width: 1400px;
+    padding: var(--spacing-xl);
+}
+
+.manifesto-text {
+    display: flex;
+    flex-direction: column;
+    gap: var(--spacing-lg);
+}
+
+.manifesto-line {
+    font-family: var(--font-display);
+    font-size: clamp(3rem, 8vw, 8rem);
+    font-weight: 900;
+    line-height: 1;
+    letter-spacing: -0.02em;
+    color: var(--color-text-primary);
+    text-transform: uppercase;
+    opacity: 0.15;
+    transition: opacity 0.4s ease, transform 0.4s ease;
+    white-space: nowrap;
+    text-shadow: 0 0 20px rgba(255, 255, 255, 0.1);
+}
+
+.manifesto-line.active {
+    opacity: 1;
+    text-shadow: 0 0 40px rgba(255, 26, 26, 0.3), 0 0 80px rgba(255, 26, 26, 0.1);
+    transform: scale(1.02);
+}
+
+.manifesto-line.visible {
+    opacity: 0.4;
+}
+
+.manifesto-accent {
+    color: var(--color-accent-red);
+    text-shadow: 0 0 40px var(--color-accent-red-glow);
+}
+
+/* ============================================
+   Immersive Service Sections
+   ============================================ */
+.service-immersive {
+    position: relative;
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    overflow: hidden;
+    background: var(--color-bg-primary);
+    border-top: 1px solid rgba(255, 255, 255, 0.08);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.service-immersive-reverse {
+    flex-direction: row-reverse;
+}
+
+.service-immersive-bg {
+    position: absolute;
+    inset: 0;
+    background: var(--color-bg-secondary);
+    background-image: 
+        radial-gradient(circle at 30% 50%, rgba(255, 26, 26, 0.15) 0%, transparent 50%),
+        radial-gradient(circle at 70% 50%, rgba(0, 255, 255, 0.1) 0%, transparent 50%);
+    opacity: 0.6;
+    transition: opacity 0.6s ease, filter 0.6s ease;
+    filter: blur(0px);
+}
+
+.service-immersive:hover .service-immersive-bg {
+    opacity: 0.9;
+    filter: blur(20px);
+}
+
+.service-immersive-content {
+    position: relative;
+    z-index: 2;
+    flex: 1;
+    padding: var(--spacing-xl);
+    max-width: 600px;
+}
+
+.service-immersive-number {
+    font-family: var(--font-display);
+    font-size: clamp(4rem, 10vw, 12rem);
+    font-weight: 900;
+    color: var(--color-accent-red);
+    opacity: 0.3;
+    line-height: 1;
+    margin-bottom: var(--spacing-md);
+    text-shadow: 
+        0 0 40px var(--color-accent-red-glow),
+        0 0 80px rgba(255, 26, 26, 0.3);
+    filter: drop-shadow(0 0 20px rgba(255, 26, 26, 0.5));
+}
+
+.service-immersive-title {
+    font-family: var(--font-display);
+    font-size: clamp(3rem, 7vw, 6rem);
+    font-weight: 800;
+    line-height: 1.1;
+    letter-spacing: -0.03em;
+    margin-bottom: var(--spacing-md);
+    overflow: hidden;
+}
+
+.service-title-word {
+    display: block;
+    transform: translateY(100%);
+}
+
+.service-immersive-description {
+    font-size: clamp(1rem, 2vw, 1.25rem);
+    color: var(--color-text-secondary);
+    line-height: 1.8;
+    margin-bottom: var(--spacing-lg);
+    max-width: 500px;
+}
+
+.service-immersive-link {
+    display: inline-flex;
+    align-items: center;
+    gap: var(--spacing-sm);
+    font-family: var(--font-display);
+    font-size: 1.1rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    color: var(--color-accent-red);
+    transition: var(--transition-base);
+}
+
+.service-immersive-link:hover {
+    gap: var(--spacing-md);
+    color: var(--color-text-primary);
+}
+
+.service-immersive-visual {
+    flex: 1;
+    height: 100vh;
+    position: relative;
+    overflow: hidden;
+}
+
+.service-visual-mask {
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(135deg, var(--color-bg-tertiary), var(--color-bg-secondary));
+    clip-path: polygon(0% 0%, 100% 0%, 100% 100%, 0% 100%);
+    transition: clip-path 0.8s cubic-bezier(0.77, 0, 0.175, 1);
+}
+
+.service-immersive:hover .service-visual-mask {
+    clip-path: polygon(20% 0%, 100% 0%, 80% 100%, 0% 100%);
+}
+
+/* ============================================
+   Materials Section
+   ============================================ */
+.materials-section {
+    padding: var(--spacing-xl) 0;
+    background: var(--color-bg-secondary);
+    position: relative;
+}
+
+.materials-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: var(--spacing-md);
+    margin-top: var(--spacing-lg);
+}
+
+.material-item {
+    position: relative;
+    aspect-ratio: 1;
+    background: var(--color-surface);
+    border: 1px solid rgba(255, 255, 255, 0.12);
+    border-radius: 12px;
+    padding: var(--spacing-md);
+    overflow: hidden;
+    cursor: pointer;
+    transition: var(--transition-base);
+    backdrop-filter: var(--blur-sm);
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+}
+
+.material-item::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(135deg, var(--color-accent-red-glow), transparent);
+    opacity: 0;
+    transition: opacity 0.4s ease;
+}
+
+.material-item:hover::before {
+    opacity: 0.1;
+}
+
+.material-item:hover {
+    transform: translateY(-12px) scale(1.05);
+    border-color: rgba(255, 26, 26, 0.5);
+    box-shadow: 
+        0 30px 80px rgba(0, 0, 0, 0.5),
+        0 0 60px rgba(255, 26, 26, 0.3);
+    background: var(--color-surface-hover);
+}
+
+.material-visual {
+    width: 100%;
+    height: 60%;
+    background: linear-gradient(135deg, var(--color-bg-tertiary), var(--color-bg-secondary));
+    border-radius: 4px;
+    margin-bottom: var(--spacing-sm);
+    position: relative;
+    overflow: hidden;
+}
+
+.material-visual::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(45deg, transparent 30%, rgba(255, 26, 26, 0.1) 50%, transparent 70%);
+    transform: translateX(-100%);
+    transition: transform 0.6s ease;
+}
+
+.material-item:hover .material-visual::after {
+    transform: translateX(100%);
+}
+
+.material-name {
+    font-family: var(--font-display);
+    font-size: 1.5rem;
+    font-weight: 700;
+    margin-bottom: var(--spacing-xs);
+    color: var(--color-text-primary);
+}
+
+.material-desc {
+    font-size: 0.9rem;
+    color: var(--color-text-secondary);
+    line-height: 1.6;
+}
+
+/* ============================================
+   Magnetic Buttons
+   ============================================ */
+.magnetic {
+    position: relative;
+    transition: transform 0.3s cubic-bezier(0.23, 1, 0.32, 1);
+}
+
+/* ============================================
+   Text Reveal Animations
+   ============================================ */
+.text-reveal {
+    overflow: hidden;
+}
+
+.text-reveal span {
+    display: inline-block;
+    transform: translateY(100%);
+}
+
+/* ============================================
+   Glitch Effect (Optional)
+   ============================================ */
+.glitch-text {
+    position: relative;
+}
+
+.glitch-text::before,
+.glitch-text::after {
+    content: attr(data-text);
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+}
+
+.glitch-text::before {
+    left: 2px;
+    text-shadow: -2px 0 var(--color-accent-red);
+    clip: rect(44px, 450px, 56px, 0);
+    animation: glitch-anim 5s infinite linear alternate-reverse;
+}
+
+.glitch-text::after {
+    left: -2px;
+    text-shadow: 2px 0 var(--color-accent-neon);
+    clip: rect(44px, 450px, 56px, 0);
+    animation: glitch-anim2 1s infinite linear alternate-reverse;
+}
+
+@keyframes glitch-anim {
+    0% { clip: rect(31px, 9999px, 94px, 0); }
+    20% { clip: rect(54px, 9999px, 77px, 0); }
+    40% { clip: rect(12px, 9999px, 23px, 0); }
+    60% { clip: rect(88px, 9999px, 45px, 0); }
+    80% { clip: rect(33px, 9999px, 67px, 0); }
+    100% { clip: rect(76px, 9999px, 12px, 0); }
+}
+
+@keyframes glitch-anim2 {
+    0% { clip: rect(65px, 9999px, 100px, 0); }
+    20% { clip: rect(12px, 9999px, 34px, 0); }
+    40% { clip: rect(78px, 9999px, 90px, 0); }
+    60% { clip: rect(23px, 9999px, 56px, 0); }
+    80% { clip: rect(45px, 9999px, 89px, 0); }
+    100% { clip: rect(90px, 9999px, 23px, 0); }
+}
+
+/* ============================================
+   3D Tilt Effect
+   ============================================ */
+.tilt-3d {
+    transform-style: preserve-3d;
+    transition: transform 0.1s ease;
+}
+
+/* ============================================
+   Split Screen Effect
+   ============================================ */
+.split-screen {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    min-height: 100vh;
+    position: relative;
+}
+
+.split-screen-left,
+.split-screen-right {
+    position: relative;
+    overflow: hidden;
+}
+
+.split-screen-divider {
+    position: absolute;
+    left: 50%;
+    top: 0;
+    bottom: 0;
+    width: 2px;
+    background: var(--color-accent-red);
+    transform: translateX(-50%);
+    z-index: 10;
+}
+
+/* ============================================
+   Image Reveal Mask
+   ============================================ */
+.image-reveal {
+    position: relative;
+    overflow: hidden;
+}
+
+.image-reveal::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: var(--color-bg-primary);
+    transform: translateX(-100%);
+    transition: transform 0.8s cubic-bezier(0.77, 0, 0.175, 1);
+    z-index: 1;
+}
+
+.image-reveal.revealed::before {
+    transform: translateX(100%);
+}
+
+/* ============================================
+   Kinetic Typography
+   ============================================ */
+.kinetic-text {
+    font-family: var(--font-display);
+    font-weight: 900;
+    letter-spacing: -0.02em;
+}
+
+.kinetic-word {
+    display: inline-block;
+    position: relative;
+}
+
+/* ============================================
+   Parallax Layers
+   ============================================ */
+.parallax-layer {
+    will-change: transform;
+}
+
+.parallax-slow {
+    transform: translateZ(0);
+}
+
+.parallax-fast {
+    transform: translateZ(0);
+}
+
+/* ============================================
+   Hover Distortions
+   ============================================ */
+.distort-hover {
+    transition: transform 0.3s cubic-bezier(0.23, 1, 0.32, 1);
+}
+
+.distort-hover:hover {
+    transform: perspective(1000px) rotateX(5deg) rotateY(-5deg) scale(1.05);
+}
+
+/* ============================================
+   Responsive Adjustments
+   ============================================ */
+@media (max-width: 968px) {
+    .service-immersive {
+        flex-direction: column;
+        min-height: auto;
+        padding: var(--spacing-lg) 0;
+    }
+    
+    .service-immersive-reverse {
+        flex-direction: column;
+    }
+    
+    .service-immersive-visual {
+        height: 50vh;
+    }
+    
+    .manifesto-line {
+        font-size: clamp(2rem, 6vw, 4rem);
+    }
+    
+    .service-immersive-number {
+        font-size: clamp(3rem, 8vw, 6rem);
+    }
+    
+    .service-immersive-title {
+        font-size: clamp(2rem, 5vw, 3rem);
+    }
+}
+
+/* ============================================
+   Gallery Enhancements
+   ============================================ */
+.gallery-item-image {
+    position: relative;
+    overflow: hidden;
+}
+
+.gallery-placeholder {
+    transition: transform 0.6s cubic-bezier(0.23, 1, 0.32, 1), filter 0.6s ease;
+}
+
+.gallery-item:hover .gallery-placeholder {
+    transform: scale(1.15) rotate(2deg);
+}
+
+/* ============================================
+   Navigation Enhancements
+   ============================================ */
+.nav-link {
+    position: relative;
+    overflow: hidden;
+}
+
+.nav-link::before {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 0;
+    height: 2px;
+    background: var(--color-accent-red);
+    transition: width 0.4s cubic-bezier(0.23, 1, 0.32, 1);
+}
+
+.nav-link:hover::before,
+.nav-link.active::before {
+    width: 100%;
+}
+
+/* ============================================
+   Button Enhancements
+   ============================================ */
+.btn {
+    position: relative;
+    overflow: hidden;
+}
+
+.btn::after {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 0;
+    height: 0;
+    border-radius: 50%;
+    background: rgba(255, 255, 255, 0.1);
+    transform: translate(-50%, -50%);
+    transition: width 0.6s ease, height 0.6s ease;
+}
+
+.btn:hover::after {
+    width: 300px;
+    height: 300px;
+}
+
+.btn-primary::after {
+    background: rgba(255, 255, 255, 0.2);
+}
+
+/* ============================================
+   Loading Animation
+   ============================================ */
+@keyframes shimmer {
+    0% {
+        background-position: -1000px 0;
+    }
+    100% {
+        background-position: 1000px 0;
+    }
+}
+
+.loading-shimmer {
+    background: linear-gradient(
+        90deg,
+        transparent,
+        rgba(255, 255, 255, 0.1),
+        transparent
+    );
+    background-size: 1000px 100%;
+    animation: shimmer 2s infinite;
+}
+
+/* ============================================
+   Glitch Scan Effect
+   ============================================ */
+.glitch-scan {
+    position: relative;
+}
+
+.glitch-scan::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(
+        transparent 50%,
+        rgba(255, 26, 26, 0.03) 50%
+    );
+    background-size: 100% 4px;
+    pointer-events: none;
+    animation: scan 8s linear infinite;
+}
+
+@keyframes scan {
+    0% {
+        transform: translateY(0);
+    }
+    100% {
+        transform: translateY(20px);
+    }
+}
+
+/* ============================================
+   Responsive Adjustments
+   ============================================ */
+@media (max-width: 768px) {
+    .custom-cursor {
+        display: none !important;
+    }
+    
+    .materials-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .manifesto-line {
+        font-size: clamp(1.5rem, 5vw, 3rem);
+    }
+    
+    .service-immersive {
+        min-height: 80vh;
+    }
+}
+

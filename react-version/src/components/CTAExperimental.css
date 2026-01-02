@@ -1,0 +1,155 @@
+.cta-experimental {
+  padding: 12rem 0;
+  background: #1a1a1a;
+  position: relative;
+  overflow: visible;
+  text-align: center;
+}
+
+.cta-content-experimental {
+  max-width: 1000px;
+  margin: 0 auto;
+  padding: 0 4rem;
+  position: relative;
+  z-index: 10;
+  overflow: visible;
+}
+
+.cta-title-experimental {
+  font-family: 'Space Grotesk', sans-serif;
+  font-size: clamp(3rem, 8vw, 10rem);
+  font-weight: 900;
+  letter-spacing: -0.03em;
+  color: #ffffff;
+  margin-bottom: 2rem;
+  line-height: 0.9;
+  overflow: visible;
+  word-wrap: break-word;
+  word-break: keep-all;
+  padding: 0 1rem;
+}
+
+.cta-subtitle-experimental {
+  font-size: clamp(1.25rem, 2vw, 1.75rem);
+  color: #d0d0d0;
+  margin-bottom: 4rem;
+  font-weight: 400;
+}
+
+.btn-cta-experimental {
+  display: inline-flex;
+  align-items: center;
+  gap: 2rem;
+  padding: 2rem 4rem;
+  background: #ff1a1a;
+  border: none;
+  color: #000000;
+  font-family: 'Space Grotesk', sans-serif;
+  font-size: 1.1rem;
+  font-weight: 800;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  text-decoration: none;
+  position: relative;
+  overflow: hidden;
+  cursor: pointer;
+  box-shadow: 0 0 60px rgba(255, 26, 26, 0.5);
+}
+
+.btn-cta-text {
+  background: linear-gradient(
+    90deg,
+    #000000 0%,
+    #ffffff 50%,
+    #000000 100%
+  );
+  background-size: 200% 100%;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.btn-cta-arrow {
+  font-size: 2rem;
+  font-weight: 300;
+}
+
+.cta-bg-shape {
+  position: absolute;
+  border-radius: 50%;
+  filter: blur(100px);
+  opacity: 0.2;
+  pointer-events: none;
+}
+
+.cta-bg-1 {
+  width: 800px;
+  height: 800px;
+  background: radial-gradient(circle, #ff1a1a, transparent);
+  top: -300px;
+  left: -300px;
+}
+
+.cta-bg-2 {
+  width: 600px;
+  height: 600px;
+  background: radial-gradient(circle, #00ffff, transparent);
+  bottom: -200px;
+  right: -200px;
+}
+
+/* Velocity-based scale animation */
+.cta-content-experimental {
+  will-change: transform;
+  transform: translateZ(0);
+}
+
+.btn-cta-experimental {
+  position: relative;
+  overflow: hidden;
+}
+
+.btn-cta-experimental::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(45deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+  transform: translateX(-100%);
+  transition: transform 0.6s ease;
+}
+
+.btn-cta-experimental:hover::after {
+  transform: translateX(100%);
+}
+
+@media (max-width: 968px) {
+  .cta-experimental {
+    padding: 6rem 0;
+  }
+  
+  .cta-content-experimental {
+    padding: 0 2rem;
+  }
+  
+  .cta-title-experimental {
+    font-size: clamp(2.5rem, 7vw, 6rem);
+    padding: 0 0.5rem;
+  }
+  
+  .btn-cta-experimental {
+    padding: 1.5rem 3rem;
+    font-size: 0.9rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .cta-title-experimental {
+    font-size: clamp(2rem, 6vw, 4rem);
+    letter-spacing: -0.02em;
+  }
+  
+  .cta-content-experimental {
+    padding: 0 1rem;
+  }
+}
+
