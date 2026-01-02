@@ -1,0 +1,240 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gallery — 905titches</title>
+    <meta name="description" content="View our portfolio of custom embroidery, laser engraving, and DTG printing work.">
+    
+    <link rel="icon" href="img/90titches_Logo.ico" type="image/x-icon">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/main.css">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar" id="navbar">
+        <div class="nav-container">
+            <a href="index.html" class="nav-logo">
+                <span class="logo-text">905<span class="logo-accent">titches</span></span>
+            </a>
+            <button class="nav-toggle" id="navToggle" aria-label="Toggle navigation">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+            <ul class="nav-menu" id="navMenu">
+                <li><a href="index.html" class="nav-link">Home</a></li>
+                <li><a href="services.html" class="nav-link">Services</a></li>
+                <li><a href="gallery.html" class="nav-link active">Gallery</a></li>
+                <li><a href="about.html" class="nav-link">About</a></li>
+                <li><a href="contact.html" class="nav-link">Contact</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Gallery Hero -->
+    <section class="page-hero">
+        <div class="container">
+            <div class="page-hero-content">
+                <span class="section-label">Our Work</span>
+                <h1 class="page-hero-title">Gallery</h1>
+                <p class="page-hero-subtitle">
+                    Explore our portfolio of custom fabrication projects.
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Gallery Filters -->
+    <section class="gallery-filters">
+        <div class="container">
+            <div class="filter-buttons">
+                <button class="filter-btn active" data-filter="all">All</button>
+                <button class="filter-btn" data-filter="embroidery">Embroidery</button>
+                <button class="filter-btn" data-filter="laser">Laser Engraving</button>
+                <button class="filter-btn" data-filter="dtg">DTG / Heat Press</button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Gallery Grid -->
+    <section class="gallery-grid-section">
+        <div class="container">
+            <div class="gallery-masonry" id="galleryMasonry">
+                <!-- Embroidery Items -->
+                <div class="gallery-item" data-category="embroidery">
+                    <div class="gallery-item-image">
+                        <div class="gallery-placeholder">
+                            <span>Hoodie</span>
+                        </div>
+                        <div class="gallery-overlay">
+                            <div class="gallery-info">
+                                <h3 class="gallery-item-title">Custom Hoodie</h3>
+                                <p class="gallery-item-category">Embroidery</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="gallery-item" data-category="embroidery">
+                    <div class="gallery-item-image">
+                        <div class="gallery-placeholder">
+                            <span>Crewneck</span>
+                        </div>
+                        <div class="gallery-overlay">
+                            <div class="gallery-info">
+                                <h3 class="gallery-item-title">Crewneck Design</h3>
+                                <p class="gallery-item-category">Embroidery</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="gallery-item" data-category="embroidery">
+                    <div class="gallery-item-image">
+                        <div class="gallery-placeholder">
+                            <span>Robe</span>
+                        </div>
+                        <div class="gallery-overlay">
+                            <div class="gallery-info">
+                                <h3 class="gallery-item-title">Embroidered Robe</h3>
+                                <p class="gallery-item-category">Embroidery</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Laser Items -->
+                <div class="gallery-item" data-category="laser">
+                    <div class="gallery-item-image">
+                        <div class="gallery-placeholder">
+                            <span>Bottle</span>
+                        </div>
+                        <div class="gallery-overlay">
+                            <div class="gallery-info">
+                                <h3 class="gallery-item-title">Engraved Bottle</h3>
+                                <p class="gallery-item-category">Laser Engraving</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="gallery-item" data-category="laser">
+                    <div class="gallery-item-image">
+                        <div class="gallery-placeholder">
+                            <span>Coaster</span>
+                        </div>
+                        <div class="gallery-overlay">
+                            <div class="gallery-info">
+                                <h3 class="gallery-item-title">Slate Coaster</h3>
+                                <p class="gallery-item-category">Laser Engraving</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="gallery-item" data-category="laser">
+                    <div class="gallery-item-image">
+                        <div class="gallery-placeholder">
+                            <span>Wood Panel</span>
+                        </div>
+                        <div class="gallery-overlay">
+                            <div class="gallery-info">
+                                <h3 class="gallery-item-title">Wood Engraving</h3>
+                                <p class="gallery-item-category">Laser Engraving</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="gallery-item" data-category="laser">
+                    <div class="gallery-item-image">
+                        <div class="gallery-placeholder">
+                            <span>Acrylic</span>
+                        </div>
+                        <div class="gallery-overlay">
+                            <div class="gallery-info">
+                                <h3 class="gallery-item-title">Acrylic Cut</h3>
+                                <p class="gallery-item-category">Laser Cutting</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- DTG Items -->
+                <div class="gallery-item" data-category="dtg">
+                    <div class="gallery-item-image">
+                        <div class="gallery-placeholder">
+                            <span>DTG Print</span>
+                        </div>
+                        <div class="gallery-overlay">
+                            <div class="gallery-info">
+                                <h3 class="gallery-item-title">DTG Graphic</h3>
+                                <p class="gallery-item-category">DTG Printing</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="gallery-item" data-category="dtg">
+                    <div class="gallery-item-image">
+                        <div class="gallery-placeholder">
+                            <span>Heat Press</span>
+                        </div>
+                        <div class="gallery-overlay">
+                            <div class="gallery-info">
+                                <h3 class="gallery-item-title">Heat Press Design</h3>
+                                <p class="gallery-item-category">Heat Press</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-brand">
+                    <h3 class="footer-logo">905<span class="logo-accent">titches</span></h3>
+                    <p class="footer-tagline">Custom fabrication for the modern maker.</p>
+                </div>
+                <div class="footer-links">
+                    <div class="footer-column">
+                        <h4 class="footer-title">Navigation</h4>
+                        <ul class="footer-list">
+                            <li><a href="index.html">Home</a></li>
+                            <li><a href="services.html">Services</a></li>
+                            <li><a href="gallery.html">Gallery</a></li>
+                            <li><a href="about.html">About</a></li>
+                            <li><a href="contact.html">Contact</a></li>
+                        </ul>
+                    </div>
+                    <div class="footer-column">
+                        <h4 class="footer-title">Connect</h4>
+                        <ul class="footer-list">
+                            <li><a href="https://www.instagram.com/905titches/" target="_blank" rel="noopener">Instagram</a></li>
+                            <li><a href="https://www.linkedin.com/company/905titches/" target="_blank" rel="noopener">LinkedIn</a></li>
+                            <li><a href="mailto:905titches@gmail.com">Email</a></li>
+                        </ul>
+                    </div>
+                    <div class="footer-column">
+                        <h4 class="footer-title">Location</h4>
+                        <p class="footer-text">Scarborough, Toronto, Canada</p>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2024 905titches. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="js/main.js"></script>
+</body>
+</html>
+
